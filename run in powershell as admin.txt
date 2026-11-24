@@ -1,0 +1,12 @@
+Set-Location 'D:\Temp\PSWindowsNativeBoot'
+. .\PSWindowsNativeBoot_v5.ps1
+
+New-WindowsNativeBoot `
+    -Source          'D:\Windows_10_22H2_US_last_official.iso' `
+    -ImagePath       'D:\Win10_large.vhdx' `
+    -Size            135GB -Edition 'Windows 10 Pro' -Compression XPRESS16K `
+    -Tweaks          DisableDefender, DisableReservedStorage, RemoveOneDrive, DisableHibernation,
+                     DisableSystemRestore, DisableSearchService, NoShortcutSuffix, ShowFileExtensions,
+                     DragDropCopy, ThisPCOnlyDesktopDocsDownloads, ExplorerOpenThisPC `
+    -DesktopShortcut @{ Name = 'Network Connections'; Target = 'C:\Windows\System32\ncpa.cpl' } `
+    -BootDescription 'Windows 10 22H2 Large' -Verbose
