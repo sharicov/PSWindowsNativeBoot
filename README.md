@@ -3,6 +3,10 @@
 Automated creation of Native Boot `.vhd(x)` installations from a Windows Setup image.
 Does not rely on Hyper-V cmdlets. Requires an elevated PowerShell 5.1+.
 
+Source taken from https://github.com/stefanhzr/PSWindowsNativeBoot and modified with Claude.
+Can compress vhdx, remove defender, add drivers and tools from respective folders in ps1 script location. 
+Tools will be copied to C:\Tools
+
 ## Features
 
 - Sources: `.iso`, `install.wim`, `install.esd`, `install.swm`, or a folder/drive containing `\sources`
